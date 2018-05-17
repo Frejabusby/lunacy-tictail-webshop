@@ -1,8 +1,6 @@
 import React from "react"
-import { BrowserRouter, Route, Link } from "react-router-dom"
+import { HashRouter, Route } from "react-router-dom"
 import Header from "./header.js"
-import Hero from "./hero.js"
-import Products from "./products"
 import SingleProduct from "./single-product"
 import Store from "./store"
 import About from "./about"
@@ -28,7 +26,7 @@ constructor(props) {
 
 render() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="container">
         <Header
             cartCount={this.state.cartCount} />
@@ -39,7 +37,7 @@ render() {
           <Route path="/product/:singleproduct" render={props => <SingleProduct {...props} onClickBuyButton={this.onClickBuyButton} />} />
           <Footer />
         </div>
-      </BrowserRouter>
+      </HashRouter>
     )
   }
 
